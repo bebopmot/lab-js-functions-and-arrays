@@ -29,7 +29,7 @@ function findLongestWord(words) {
 
     let longestWord = "";
 
-    words.forEach(function(element) {
+    words.forEach(function (element) {
         if (element.length > longestWord.length) {
             longestWord = element;
         }
@@ -44,13 +44,13 @@ function findLongestWord(words) {
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(arr) {
-    let sum = 0;  
+    let sum = 0;
 
-    arr.forEach(function(element) {
-        sum += element;  
+    arr.forEach(function (element) {
+        sum += element;
     });
 
-    return sum;  
+    return sum;
 }
 
 
@@ -60,15 +60,20 @@ function sumNumbers(arr) {
 const numbers2 = [2, 6, 9, 10, 7, 4, 1, 9];
 
 
-function averageNumbers() {
-let sum = 0;  
+function averageNumbers(arr) {
+    let sum = 0;
 
-    arr.forEach(function(element) {
-        sum += element  
+    arr.forEach(function (element) {
+        sum += element;
     });
+    if (arr.length === 0) {
+        return 0
+    }
+    const average = sum / arr.length
 
-    return sum;  
+    return average
 }
+
 
 
 
@@ -76,18 +81,17 @@ let sum = 0;
 const words2 = ["machine", "subset", "trouble", "starting", "matter", "eating", "truth", "disobedience"];
 
 function doesWordExist(arr, word) {
-    const  words = ""
-    arr.forEach(function(element) {
-         if (element === words){
-            return true
-           }  
-       else if (element !== words){
-        return false
-       } 
-       else if (element === "[]" ){
-        return "null"
-       }  
-    });
+    if (arr.length === 0) {
+        return null;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === word) {
+            return true;
+        }
+    }
+
+    return false;
+
 }
-
-
+console.log(doesWordExist(words2, "machine"));
